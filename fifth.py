@@ -7,13 +7,10 @@ credits = pd.read_csv("credits.csv")
 titles = pd.read_csv("titles.csv")
 
 data = titles.sort_values(by="imdb_score", ascending=False).dropna().head(1000)
-values = data.groupby(by="genres")["title"].count().sort_values(ascending=False)
-objects = values
-y_pos = np.arange(len(values))
-performance = [1000,900,800,700,600, 500, 400, 300, 200, 100, 0]
-plt.bar(y_pos, performance, align='center')
+genres = {}
 
-plt.figure(figsize=(16, 10))
+for i in data['genres']:
+
 
 
 plt.show()
